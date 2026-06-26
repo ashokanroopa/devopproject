@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: my-clusterip-ip-app
 spec:
+  type: ClusterIP
   selector:
     app: ip-app
   ports:
-  - name: http
-    port: 30009
-    targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
